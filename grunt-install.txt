@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# zakladni instalace grunt
+npm install grunt --save-dev
+
+########################################################################################
+
+# instalace grunt modulu
+
+npm install grunt-contrib-watch
+npm install grunt-contrib-uglify
+npm install grunt-contrib-less
+
+

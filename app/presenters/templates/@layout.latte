@@ -1,0 +1,115 @@
+{**
+ * @param string   $basePath web base path
+ * @param array    $flashes  flash messages
+ *}
+
+<!DOCTYPE html>
+<html>
+<head>
+  {block head}
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{ifset title}{include title|striptags} | {/ifset}Nette Sandbox</title>
+	<link href="{$basePath}/css/main.min.css" rel="stylesheet">
+	<link href="{$basePath}/css/template/styles.css" rel="stylesheet">
+	<link rel="shortcut icon" href="{$basePath}/favicon.ico">
+	{/block}
+</head>
+
+<body>
+<nav class="navbar navbar-static">
+    <div class="container">
+      <a class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="glyphicon glyphicon-chevron-down"></span>
+      </a>
+      <div class="nav-collapse collase">
+        <ul class="nav navbar-nav" n:inner-foreach="$menuItems as $item => $link">
+        {if $user->loggedIn}  
+          <li><a n:href="$link">{$item}</a></li>
+           {/if}
+        </ul>
+        <ul class="nav navbar-right navbar-nav">
+         
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> <i class="glyphicon glyphicon-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+                {if $user->loggedIn}
+                <li><a n:href="Sign:out">Odhlasit</a></li>
+              {else}
+                  <li><a n:href="Sign:in">Prihlasit</a></li>
+                  
+              {/if}
+             </ul>
+          </li>  
+        </ul>
+      </div>		    
+    </div>
+</nav><!-- /.navbar -->	       
+
+<header class="masthead">
+  <div class="container">
+  
+  <div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
+    <div class="row">
+      <div class="col col-sm-6">
+        <h1 style="color:red">Systém CRM</h1>
+          <h4 style="color:gray">Lukas Komprs</h4>
+      </div>
+      
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="container">
+	<div class="row">
+      <div class="col col-sm-12">
+        
+        <div class="panel">
+        <div class="panel-body">
+          Při práci s mým CRM systémem ušetříte čas a pěníze. Všechny vaše zakázky od teď máte plně pod kontrolou.   <span class="glyphicon glyphicon-fire"></span>
+        </div>
+        </div>
+        
+      </div>
+  	</div>
+  </div>
+</header>
+
+<!-- Begin Body -->
+<div class="container">     
+{include content}
+
+<br>
+<br>
+          
+  <footer class="site-footer">
+  		<div class="container">
+  			<div class="row">
+  			<div class="col-sm-4" style="padding-left: 38px; padding-top:19px">
+  				<h4>Kontakt</h4>
+  				<address>
+  					Majakovskeho 16<br>
+  					Mikulov 692 01<br>
+  					Czech Republic<br>
+  				</address>
+  			</div>
+  			</div>
+  			<div class="bottom-footer">
+          <div class="row">
+  				<div class=" col-sm-4" style="padding-top:5px;padding-left:23px" >Copyright Komprs Lukas 2015.</div>
+          </div> 		
+  				</div>
+  			
+  	</div>
+  </footer>
+</div>
+    {block scripts}
+		<script> document.documentElement.className+=' js' </script>
+		<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+		<script src="//nette.github.io/resources/js/netteForms.min.js"></script>
+		<script src="{$basePath}/js/app.min.js"></script>
+		<script src="{$basePath}/js/template/scripts.js"></script>		
+		{/block}
+
+</body>
+</html>

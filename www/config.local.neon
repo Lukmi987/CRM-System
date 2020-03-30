@@ -1,0 +1,9 @@
+parameters:
+
+
+database:
+	dsn: 'mysql:host=localhost;dbname=komprsCdom'
+	user: 'komprsCdom'
+	password: 'r0RfQQ0J'
+	options:
+		lazy: yes

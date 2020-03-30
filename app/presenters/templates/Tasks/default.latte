@@ -1,0 +1,32 @@
+
+{block content}
+<div class="page-header">
+<div class="zpet">
+<h3><a n:href="Projects:default">← Zpět na výpis projektů</a></h3></div>
+    <h1 n:block=title>Vypis úkolů</h1>
+</div>
+
+<table class="table table-striped">
+    <tr>
+        <th>Projekt id</th>
+        <th>ID Ukolu</th>
+        <th>Název ukolu</th>
+        <th>Status</th>
+        <th>Cena úkolu</th>
+        <th>Komentář</th>    
+        <th>Upravit/Smazat Klienta</th>
+    </tr>
+    <tr n:foreach="$userList as $a">
+        <td>{$a->project_id}</td>  
+        <td>{$a->id}</td>    
+        <td>{$a->title}</td>
+        <td>{$a->status}</td>
+        <td>{$a->price}</td>
+        <td><a n:href="Taskcomments:default, 'id' => $a->id, 'project' => $a->project_id, ">Komentáře</a></td>
+        <td><a n:href="detail, 'id' => $a->id">Upravit</a> | <a n:href="delete, 'id' => $a->id" onclick="return confirm('Opravdu si prejete klienta smazat')">Smazat</a></td>           
+    </tr>
+</table>
+
+<div class="container">
+<h3><a n:href="Tasks:add, 'id' => $IdProjektu,">Vytvorit nový ukol</a><h1>
+</div>

@@ -1,0 +1,134 @@
+@import 'bootstrap/bootstrap.less';
+
+@mainorange: orange;
+@margintop: 10px;
+@gutter:15px;
+@link-color: @brand-primary;
+@link-hover-color: darken(@link-color, 15%);
+@font-family-base: @font-family-sans-serif;
+
+.site-footer
+{
+  	background-color: #222;
+  	color:#fff;
+  	margin-top: 30px;
+}
+.bottom-footer
+{ 
+  	border-top: 1px solid #b2b2b2;
+  	margin-top: @margintop;
+  	color:@mainorange;
+  	margin:15px;
+}
+.footer-nav
+{
+ 	text-align: right;
+ 	list-style: none;
+
+ 	li {
+		display: inline;
+ 	}
+
+ 	a {
+ 		color:@mainorange;
+ 	}
+}
+.table
+{
+
+	th {
+ 		font-size: 20px;
+ 		color:white;
+ 		background-color: #ff3333;
+ 	}
+
+ 	td { color:black;
+
+ 		font-family: @font-family-base;
+ 	}
+}
+.navbar
+{
+	li {
+		  padding-right: (@gutter / 2);
+		  font-size: 22px;
+	}	
+}
+
+#frm-clientForm, #frm-projectForm, #frm-taskForm, #frm-taskcommentForm, #frm-signInForm, #frm-registrationForm {
+		background-color:#E6E6E6;
+ 		border:1px dotted; 		
+ 		width: 360px;
+ 		border-style: outset;
+ 		padding-top:40px;
+ 	  border-radius: 10px;
+    padding-left:10px;
+ }
+
+ #frm-signInForm .test{
+ background-color:red;
+
+
+ }
+th {
+ 		font-size: 18px;
+ 		font-family:sans-serif;
+ 		color:black;
+ 		padding:6px;
+
+ 	}
+   
+   select {
+    font-size: 18px;
+    font-family:arial;
+    color:black;
+    padding:2px;
+
+  }		
+ 	
+
+ 		input { 
+   		border: 1px dotted #999;
+  		border-radius: 10px;
+  		border-style: inset;
+  		height:30px;
+  		width:200px;
+  		font-size: 120%;
+ 		}
+	
+	input.btn.btn-success.button { 
+   		border: 1px dotted #999;
+  		border-radius: 10px;
+  		border-style: outset;
+  		height:30px;
+  		width:100px;
+  		margin: 20px;
+ 		}
+      input.button { 
+      border: 1px dotted #999;
+      border-radius: 10px;
+      border-style: outset;
+      height:30px;
+      width:100px;
+      margin: 20px;
+    }
+
+
+.zpet {
+    padding-bottom:20px;
+    font-family:serif;
+    a:hover { 
+    background-color: yellow;
+    }
+
+}	
+
+.uvod {
+  font: italic 18px/1.5 Arial
+}
+
+#luk {
+margin-left: auto;
+    margin-right: auto;
+  
+}
